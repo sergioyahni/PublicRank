@@ -1,6 +1,7 @@
 # DJ-Friend
 
  1. See a list of all DJs (no password required)
+ 
 http://dj.masaccio.io/web_service/api/dj/read.php
 
 2. See one DJ by id (no password required)
