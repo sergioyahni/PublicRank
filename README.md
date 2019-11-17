@@ -5,9 +5,11 @@
 http://dj.masaccio.io/web_service/api/dj/read.php
 
 2. See one DJ by id (no password required)
+
 url/web_service/api/dj/read_single.php?id=2
 
 3. Create a DJ (should be used to register a DJ | no password required however it require proof of human)
+
 http://dj.masaccio.io/web_service/api/dj/create.php
 
 {
@@ -21,9 +23,8 @@ http://dj.masaccio.io/web_service/api/dj/create.php
 "location": "מרכז",
 "image": ""
 }
-
-
 4. update a DJ (requires password twice once to access second time to update)
+
 http://dj.masaccio.io/web_service/api/dj/create.php
 
 {
@@ -40,7 +41,9 @@ http://dj.masaccio.io/web_service/api/dj/create.php
 }
 
 5. delete a DJ (password required)
+
 http://dj.masaccio.io/web_service/api/dj/delete.php
+
 {
      "id": "2"
 }
