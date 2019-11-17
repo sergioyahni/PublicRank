@@ -23,6 +23,7 @@ http://dj.masaccio.io/web_service/api/dj/create.php
 "location": "מרכז",
 "image": ""
 }
+
 4. update a DJ (requires password twice once to access second time to update)
 
 http://dj.masaccio.io/web_service/api/dj/create.php
@@ -49,16 +50,21 @@ http://dj.masaccio.io/web_service/api/dj/delete.php
 }
 
 ========================================================================
+
 EVENT
 
 1. See a list of all Events by certain DJ (to be decided if no password is required)
+
 url/web_service/api/event/read.php?dj=2
 
 2. See a single Event by certain DJ (no password is required)
+
 url/web_service/api/event/read_single.php?id=2
 
 3. Create an event (password required)
+
 url/web_service/api/event/create.php
+
 {
     "id_dj": "1",
     "name": "החתונה של מור ואסף",
@@ -69,9 +75,12 @@ url/web_service/api/event/create.php
     "event_start": "19:00",
     "event_end": "24:00"
   }
-4. update an event (password required)
-url/web_service/api/event/update.php
-{
+  
+  4. update an event (password required)
+  
+  url/web_service/api/event/update.php
+  
+  {
     "id": "2",
     "id_dj": "1",
     "name": "החתונה של מור ואסף",
@@ -82,8 +91,11 @@ url/web_service/api/event/update.php
     "event_start": "19:00",
     "event_end": "24:00"
 }
+
 5. delete an event (password required)
+
 http://dj.masaccio.io/web_service/api/event/delete.php
+
 {
    "id": "2"
 }
@@ -92,23 +104,28 @@ http://dj.masaccio.io/web_service/api/event/delete.php
 
 SONG (A DJs playlist)
 
-1. See the playlist of certain DJ (to be decided if no password is required)
+1. See the playlist of certain DJ (to be decided if no password is required
+
 http://dj.masaccio.io/web_service/api/song/read.php?dj=2
 
-2. See a single song by id (password required)
+2. See a single song by id (password required
+
 http://dj.masaccio.io/web_service/api/song/read_single.php?id=2
 
 3. Add a song to a DJ's playlist (password required)
+
 http://dj.masaccio.io/web_service/api/song/create.php
 
- {
+{
     "id_dj": "2",
     "name": "great balls of fire",
     "genere": "Rock & Roll",
     "url": "ZD8YPY8RBQc", ###the part after "https://www.youtube.com/watch?v=...."###
     "artist": "Jerry Lee lewis"
-  }
+}
+  
 4. update a song in a DJ's playlist (password required)
+
 http://dj.masaccio.io/web_service/api/song/update.php
 
 {
@@ -119,7 +136,9 @@ http://dj.masaccio.io/web_service/api/song/update.php
     "url": "DkFJE8ZdeG8",
     "artist": "Calle 13"
 }
+
 5. delete a song from a DJ's playlist (password required)
+
 http://dj.masaccio.io/web_service/api/song/delete.php
 
 {
@@ -131,29 +150,39 @@ http://dj.masaccio.io/web_service/api/song/delete.php
 Music(the playlist to be ranked during certain event)
 
 1. See the playlist certain DJ prepared to be ranked in an event(no password is required)
+
 http://dj.masaccio.io/web_service/api/music/read.php?event=2
 
 2. Add a song to be ranked in an event(password required)
+
 http://dj.masaccio.io/web_service/api/music/create.php
- {
+
+{
     "id_event": "2",
     "id_song": "2",
     "rating": "0" ###MUST BE SET TO ZERO###
- }
+}
+
 3. Rank a song to during an event(no password required limited by by date and time of the event)
+
 http://dj.masaccio.io/web_service/api/music/rank.php
- {
+
+{
     "id": "2",
     "rating": "1" ###MUST BE SET TO ONE###
  }
-
-4. delete a song from the ranking (password required)
-url/web_service/api/music/delete.php
+ 
+ 4. delete a song from the ranking (password required)
+ 
+ url/web_service/api/music/delete.php
  {
     "id": "2",
  }
-5. delete all songs from an event (password required)
-http://dj.masaccio.io/web_service/api/music/delete_all.php
+ 
+ 5. delete all songs from an event (password required)
+ 
+ http://dj.masaccio.io/web_service/api/music/delete_all.php
+ 
  {
     "id_event": "2"
  }
