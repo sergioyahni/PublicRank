@@ -26,7 +26,7 @@ http://dj.masaccio.io/web_service/api/dj/create.php
 
 4. update a DJ (requires password twice once to access second time to update)
 
-http://dj.masaccio.io/web_service/api/dj/create.php
+http://dj.masaccio.io/web_service/api/dj/update.php
 
 {
     "id": "2",
