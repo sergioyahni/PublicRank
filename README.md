@@ -1,14 +1,21 @@
 FRONT PAGE
+
 Base URL http://dj.masaccio.io/ should be saved to a variable, so it can be changed in production.  
 
 I AM A USER
 
 Event Details:
+
 http://dj.masaccio.io/web_service/api/event/read_single.php?id=2
+
 Playlist to rank:
+
 http://dj.masaccio.io/web_service/api/music/read.php?event=2
+
 Rank a song:
+
 http://dj.masaccio.io/web_service/api/music/rank.php
+
 POST details:
 {
 “id” : 3,
@@ -18,18 +25,28 @@ POST details:
 !important: “rating” must be “1”
 
 I AM A DJ
+
 DJ Login: 
+
 http://dj.masaccio.io/web_service/api/dj/login.php
+
 POST details: 
+
 {
 "email": "nic@tt.com",
  "password": "123"
 }
+
 DJ Logout:
+
 http://dj.masaccio.io/web_service/api/dj/logout.php
+
 DJ Register (Create Profile)
+
 http://dj.masaccio.io/web_service/api/dj/create.php
+
 POST details
+
 {
     "first_name": "Nico",
     "last_name": "Sergio",
@@ -42,12 +59,14 @@ POST details
     "image": "",
 }
 
-
-
 DJ PAGE
+
 DJ Profile
+
 Update Profile
+
 http://dj.masaccio.io/web_service/api/dj/update.php
+
 POST details (ID is defined at login)
 {
     "first_name": "Nico",
@@ -61,22 +80,29 @@ POST details (ID is defined at login)
     "image": "",
 }
 
- 	Delete Profile
-http://dj.masaccio.io/web_service/api/dj/delete.php
-		(ID is defined at login)
+Delete Profile
 
-Create Music Playlist
-	Show Playlist
+http://dj.masaccio.io/web_service/api/dj/delete.php
+
+(ID is defined at login)
+
+Show Playlist
+
 http://dj.masaccio.io/web_service/api/song/read.php
 (ID is defined at login)
 
 Show single Song
+
 http://dj.masaccio.io/web_service/api/song/read_single.php?id=2
 
 Add Song
+
 http://dj.masaccio.io/web_service/api/song/create.php
+
 (id_dj is defined at login)
+
 POST details:
+
 {
 "name": "great balls of fire", 
 "genere": "Rock & Roll", 
@@ -84,9 +110,11 @@ POST details:
 "artist": "Jerry Lee lewis"
 }
 
-	Update Song
+Update Song
+
 http://dj.masaccio.io/web_service/api/song/update.php
-		{
+
+{		{
 “id”:”8”,
 "name": "great balls of fire", 
 "genere": "Rock & Roll", 
@@ -95,23 +123,33 @@ http://dj.masaccio.io/web_service/api/song/update.php
 }
 
 Delete Song
+
 http://dj.masaccio.io/web_service/api/song/delete.php
+
 {
 “Id”:“8”
 }
 
 Create Event
+
 Show all Events
+
 http://dj.masaccio.io/web_service/api/event/read.php
+
 (Dj is provided at login)
 
 Show Single Event
+
 http://dj.masaccio.io/web_service/api/event/read_single.php?id=2
 
 Create Event
+
 http://dj.masaccio.io/web_service/api/event/create.php
-	POST details
+
+POST details
+
 (id_dj is provided at login)
+
 { 
 "name": "Mor and Jo Wedding", 
 "type": "Wedding", 
@@ -123,8 +161,11 @@ http://dj.masaccio.io/web_service/api/event/create.php
 }
 
 Update Event
+
 http://dj.masaccio.io/web_service/api/event/update.php
+
 POST details
+
 (id_dj is provided at login)
 { 
 “Id”: “2”
@@ -136,17 +177,25 @@ POST details
 "event_start": "19:00", 
 "event_end": "24:00"
 }
-	Add song to be ranked at event:
+
+Add song to be ranked at event:
+
 http://dj.masaccio.io/web_service/api/music/create.php
-		POST details
-		{ 
+
+POST details
+
+{ 
 "id_event": "2", 
 "id_song": "2",
  "rating": "0"
  }
+
 Delete Event
+
 http://dj.masaccio.io/web_service/api/event/delete.php
+
 POST details:
+
 { 
 "id": "2" 
 }
