@@ -30,7 +30,7 @@ DJ Login:
 
 http://dj.masaccio.io/web_service/api/dj/login.php
 
-POST details: 
+POST details:
 
 {
 "email": "nic@tt.com",
