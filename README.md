@@ -1,4 +1,4 @@
-<b>FRONT PAGE<b>
+<b>FRONT PAGE</b>
 
 Base URL http://dj.masaccio.io/ should be saved to a variable, so it can be changed in production.  
 
