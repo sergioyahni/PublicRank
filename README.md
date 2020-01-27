@@ -18,13 +18,13 @@
 <p><strong>I AM A DJ</strong></p>
 <p>DJ Login:</p>
 <ul>
-<li><a href="http://dj.masaccio.io/web_service/api/dj/login.php" rel="nofollow">http://dj.masaccio.io/web_service/api/dj/login.php</a></li>
+<li><a href="http://dj.masaccio.io/web_service/api/auth/login.php" rel="nofollow">http://dj.masaccio.io/web_service/auth/dj/login.php</a></li>
 </ul>
 <p style="padding-left: 30px;">POST details:</p>
 <p style="padding-left: 30px;">{ "email": "<a href="mailto:nic@tt.com">nic@tt.com</a>", "password": "123" }</p>
 <p>DJ Logout:</p>
 <ul>
-<li><a href="http://dj.masaccio.io/web_service/api/dj/logout.php" rel="nofollow">http://dj.masaccio.io/web_service/api/dj/logout.php</a></li>
+<li><a href="http://dj.masaccio.io/web_service/api/auth/logout.php" rel="nofollow">http://dj.masaccio.io/web_service/api/auth/logout.php</a></li>
 </ul>
 <p>DJ Register (Create Profile)</p>
 <ul>
