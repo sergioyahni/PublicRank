@@ -62,6 +62,7 @@ POST details
 DJ PAGE
 
 DJ Profile
+
 Read Profile
 http://dj.masaccio.io/web_service/api/dj/read_single.php
 Update Profile
