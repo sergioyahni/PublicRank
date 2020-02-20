@@ -10,6 +10,11 @@ header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, content-Type
 include_once '../../config/Database.php';
 include_once '../../models/Event.php';
 
+// verify ID
+session_start();
+$uid = isset($_SESSION['uid']) ? $_SESSION['uid'] : die(json_encode(array('message' => 'ID Error',)));
+
+
 //Instantiate DB Object
 $database = new Database();
 $db = $database->connect();
@@ -22,7 +27,7 @@ $data = json_decode(file_get_contents("php://input"));
 //set id to update
 $event->id    = $data->id;
 //set variable for updating
-$event->id_dj        = $data->id_dj;
+$event->id_dj        = $uid;
 $event->name         = $data->name;
 $event->type         = $data->type;
 $event->permit       = $data->permit;
