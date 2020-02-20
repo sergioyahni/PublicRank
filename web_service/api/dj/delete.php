@@ -9,6 +9,10 @@ header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, content-Type
 include_once '../../config/Database.php';
 include_once '../../models/DJ.php';
 
+// verify id
+session_start();
+$uid = isset($_SESSION['uid']) ? $_SESSION['uid'] : die(json_encode(array('message' => 'ID Error',)));
+
 //Instantiate DB Object
 $database = new Database();
 $db = $database->connect();
@@ -17,11 +21,8 @@ $db = $database->connect();
 $dj = new DJ($db);
 
 
-//Get raw posted data
-$data = json_decode(file_get_contents("php://input"));
-
 //Set post id to update
-$dj->id = $data->id;
+$dj->id = $uid;
 
 // Delete post
 if($dj->delete()){
