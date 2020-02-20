@@ -21,9 +21,7 @@ class Event{
     public function __construct($db){
         $this->conn = $db;
     }
-    // get events of certain DJ,
-    //no password required , no acess restrictions
-    //==========================================================================
+    // get events of certain DJ
     public function read(){
         //Create query
         $query = 'SELECT
@@ -53,8 +51,6 @@ class Event{
     }
 
     // get a single event
-    //no password required , no acess restrictions
-    //==========================================================================
     public function read_single(){
         //Create query
         $query = 'SELECT
@@ -86,8 +82,6 @@ class Event{
         return $stmt;
     }
     //Create an event, protected.
-    // only registered DJs can create events
-    //==========================================================================
     public function create(){
         //Create query
         $query = 'INSERT INTO ' . $this->table . '
