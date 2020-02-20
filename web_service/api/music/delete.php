@@ -9,6 +9,8 @@ header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, content-Type
 include_once '../../config/Database.php';
 include_once '../../models/Music.php';
 
+if (!isset($_SESSION)) { die(json_encode(array('message' => 'ID Error',); }
+
 //Instantiate DB Object
 $database = new Database();
 $db = $database->connect();
