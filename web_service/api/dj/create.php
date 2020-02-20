@@ -18,7 +18,6 @@ $dj = new DJ($db);
 
 //Get raw DJ data
 $data = json_decode(file_get_contents("php://input"));
-//var_dump($data);
 $password  = sha1($database->saltPrefix . $data->password . $database->saltSufix);
 $img       = $data->image;
 
