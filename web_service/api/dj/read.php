@@ -30,7 +30,6 @@ if($num > 0){
        extract($row);
 
        $dj_item = array(
-           'id'           =>  $id,
            'first_name'   =>  $first_name,
            'last_name'    =>  $last_name,
            'email'        =>  $email,
