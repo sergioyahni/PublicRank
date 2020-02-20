@@ -14,9 +14,9 @@ $db = $database->connect();
 //instantiante song object
 $song = new Song($db);
 
-$song->id = isset($_GET['id']) ? $_GET['id'] : die();
+$song->dj = isset($_GET['dj']) ? $_GET['dj'] : die();
 //DJ query
-$result = $song->read_single();
+$result = $song->read();
 
 //Get row count
 $num = $result->rowCount();
