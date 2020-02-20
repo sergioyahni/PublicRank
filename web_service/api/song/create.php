@@ -6,6 +6,9 @@ header('Content-Type: application/json; charset=UTF-8');
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, content-Type, Allow-Methods, Authorization, x-Requested With');
 
+session_start();
+$uid = isset($_SESSION['uid']) ? $_SESSION['uid'] : die(json_encode(array('message' => 'ID Error',)));
+
 
 include_once '../../config/Database.php';
 include_once '../../models/Song.php';
@@ -21,7 +24,7 @@ $song = new Song($db);
 $data = json_decode(file_get_contents("php://input"));
 
 
-$song->id_dj   = $data->id_dj;
+$song->id_dj   = $uid;
 $song->name    = $data->name;
 $song->genere  = $data->genere;
 $song->url     = $data->url;
