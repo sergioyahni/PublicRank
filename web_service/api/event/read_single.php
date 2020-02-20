@@ -52,7 +52,7 @@ if($num > 0){
 
 }else{
     echo json_encode(
-        array('message' => 'לא נמצאו פריטים')
+        array('message' => 'Event Not Found')
     );
 }
 function json_encode_unicode($data) {
