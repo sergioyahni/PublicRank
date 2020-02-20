@@ -16,9 +16,7 @@ class Song{
     public function __construct($db){
         $this->conn = $db;
     }
-    // get all songs of a certain DJ,
-    //password required ,acess restrictions
-    //==========================================================================
+    // get all songs of a certain DJ
     public function read(){
         //Create query
         $query = 'SELECT
@@ -39,8 +37,6 @@ class Song{
         return $stmt;
     }
     // get a single song
-    //password required ,acess restrictions
-    //==========================================================================
     public function read_single(){
         //Create query
         $query = 'SELECT
@@ -62,8 +58,6 @@ class Song{
         return $stmt;
     }
     //Create a song protected.
-    // only registered DJs can create events
-    //==========================================================================
     public function create(){
         //Create query
         $query = 'INSERT INTO ' . $this->table . '
@@ -99,9 +93,7 @@ class Song{
           printf("Error: %s.\n", $stmt->error);
           return-false;
   }
-  //Update a song protected.
-  // only registered DJs can create events
-  //==========================================================================
+  //Update a song protected
   public function update(){
       //Create query
       $query = 'UPDATE ' . $this->table . '
