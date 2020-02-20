@@ -1,13 +1,15 @@
 <?php
 
 //Headers
-//Headers
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 include_once '../../config/Database.php';
 include_once '../../models/DJ.php';
 
+//Start Session
+session_start();
+$uid = isset($_SESSION['uid']) ? $_SESSION['uid'] : die(json_encode(array('message' => 'ID Error',)));
 //Instantiate DB Object
 $database = new Database();
 $db = $database->connect();
@@ -16,8 +18,7 @@ $db = $database->connect();
 $dj = new DJ($db);
 
 //Get id from URL
-$dj->id = isset($_GET['id']) ? $_GET['id'] : die();
-
+$dj->id = $uid;
 //Get Post
 $dj->read_single();
 
