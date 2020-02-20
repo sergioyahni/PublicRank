@@ -22,8 +22,7 @@ class DJ{
     public function __construct($db){
         $this->conn = $db;
     }
-    // get a list of all DJs, no password required , no acess restrictions
-    //==========================================================================
+    // get a list of all DJs
     public function read(){
         //Create query
         $query = 'SELECT
@@ -48,9 +47,7 @@ class DJ{
         $stmt->execute();
         return $stmt;
     }
-     //Get a single DJ, NO password proected
-     //CERTAIN INFORMATION IS ACCESSIBLE TO USERS AT EVENTS.
-     //==========================================================================
+     //Get a single DJ
     public function read_single(){
         //Create query
         $query = 'SELECT
@@ -95,10 +92,7 @@ class DJ{
         $this->created_date = $row['created_date'];
     }
 
-    //Create a  DJ, no password protected
-    // IMPORTANT! CREATE SYSTEM TO VERITY REAL PERSONS SHOULD
-    //BE IMPLEMENTED AT HTML/JS LEVEL
-    //==========================================================================
+    //Create a  DJ
     public function create(){
         //Create query
         $query = 'INSERT INTO ' . $this->table . '
@@ -151,9 +145,7 @@ class DJ{
         printf("Error: %s.\n", $stmt->error);
         return-false;
     }
-    //Update a  DJ, password proected, restricted to single owner
-    // IMPORTANT! ADD PASSWORDS RESTRICTIONS AFTER BUILDING LOGIN AND REGISTER
-    //==========================================================================
+    //Update a  DJ
     public function Update(){
         //Create query
         $query = 'UPDATE ' . $this->table . '
@@ -212,11 +204,7 @@ class DJ{
     }
 
 
-    //Delete a  DJ, password proected, restricted to owner of profile. Intended
-    //DJs to exit the system.
-    // IMPORTANT! ADD PASSWORDS RESTRICTIONS AFTER BUILDING LOGIN AND REGISTER
-    //==========================================================================
-
+    //Delete a  DJ
     public function delete(){
          // Create query
          $query = 'DELETE FROM ' . $this->table . ' WHERE id = :id';
