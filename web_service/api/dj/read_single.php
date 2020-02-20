@@ -17,7 +17,7 @@ $db = $database->connect();
 //instantiante single dj object
 $dj = new DJ($db);
 
-//Get id from URL
+//Get id
 $dj->id = $uid;
 //Get Post
 $dj->read_single();
