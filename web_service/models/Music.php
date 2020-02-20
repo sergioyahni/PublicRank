@@ -17,9 +17,7 @@ class Music{
     public function __construct($db){
         $this->conn = $db;
     }
-    // get selected music for certain event,
-    //no password required ,no acess restrictions
-    //==========================================================================
+    // get selected music for certain event
     public function read(){
         //Create query
         $query = 'SELECT
@@ -42,9 +40,7 @@ class Music{
         $stmt->execute();
         return $stmt;
     }
-    // Select music for certain event,
-    //password required ,acess restrictions
-    //==========================================================================
+    // Select music for certain event
     public function create(){
         //Create query
         $query = 'INSERT INTO ' . $this->table . '
@@ -73,9 +69,7 @@ class Music{
           printf("Error: %s.\n", $stmt->error);
           return-false;
   }
-  // Rank a song selected for an event,
-  //no password required ,restricted by event
-  //==========================================================================
+  // Rank a song selected for an event
   public function rank(){
       //Create query
       $query = 'UPDATE ' . $this->table . '
@@ -102,9 +96,7 @@ class Music{
         printf("Error: %s.\n", $stmt->error);
         return-false;
       }
-      // Delete a song selected for an event,
-      //Password required ,restricted access
-      //==========================================================================
+      // Delete a song selected for an event
   public function delete(){
      // Create query
      $query = 'DELETE FROM ' . $this->table . ' WHERE id = :id';
@@ -128,9 +120,7 @@ class Music{
 
      return-false;
    }
-   // Delete all songs selected for an event,
-   //Password required ,restricted access
-   //==========================================================================
+   // Delete all songs selected for an event
    public function delete_all(){
       // Create query
       $query = 'DELETE FROM ' . $this->table . ' WHERE id_event = :id_event';
