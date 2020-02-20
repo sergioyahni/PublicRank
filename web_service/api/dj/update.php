@@ -9,6 +9,10 @@ header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, content-Type
 include_once '../../config/Database.php';
 include_once '../../models/DJ.php';
 
+//Verify idea
+session_start();
+$uid = isset($_SESSION['uid']) ? $_SESSION['uid'] : die(json_encode(array('message' => 'ID Error',)));
+
 //Instantiate DB Object
 $database = new Database();
 $db = $database->connect();
@@ -18,11 +22,10 @@ $dj = new DJ($db);
 
 //Get raw DJ data
 $data = json_decode(file_get_contents("php://input"));
+$password  = sha1($database->saltPrefix . $data->password . $database->saltSufix);
 //set id to update
-$dj->id    = $data->id;
-//define special variables
-$password  = sha1($database->saltPrefix . $data->pass . $database->saltSufix);
-$img       = $data->image;
+$dj->id    = $uid;
+
 //set variable for updating
 $dj->first_name = $data->first_name;
 $dj->last_name  = $data->last_name;
@@ -33,7 +36,7 @@ $dj->website    = $data->website;
 $dj->facebook   = $data->facebook;
 $dj->about      = $data->about;
 $dj->location   = $data->location;
-$dj->image      = $img;
+$dj->image      = $data->image;
 
 // Create post
 if($dj->update()){
